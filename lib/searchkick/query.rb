@@ -772,10 +772,10 @@ module Searchkick
               field: agg_options[metric][:field] || field
             }
           }.merge(shared_agg_options)
-        elsif agg_options[:dedup]
+        elsif field == :dedup
           payload[:aggs][field] = {
             terms: {
-              field: agg_options[:field] || field,
+              field: agg_options[:field] || field
             }
           }.merge(shared_agg_options)
         else
